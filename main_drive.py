@@ -74,8 +74,7 @@ def file_create(dataset, service):
 
     file_metadata = {
         "name": 'Planilha_123',
-        "mimeType": 'application/vnd.google-apps.spreadsheet',
-        "parents": '18zDEpG34wgN0TKB1c5EQSW7E6zqxMjyY'
+        "mimeType": 'application/vnd.google-apps.spreadsheet'
     }
     media = MediaFileUpload('dados.xlsx')
     file = service.files().create(body=file_metadata, media_body=media, fields='id').execute()
@@ -106,10 +105,6 @@ def check_sheet(service):
         if page_token is None:
             break
     return response
-
-
-def file_update(dataset_new, creds, service):
-    print(dataset_new)
 
 
 def main():
